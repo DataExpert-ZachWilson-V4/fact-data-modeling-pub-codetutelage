@@ -9,10 +9,10 @@ The name of this table should be user_devices_cumulated.
 
 The schema of this table should look like:
 
-user_id bigint
-browser_type varchar
-dates_active array(date)
-date date
+--user_id bigint
+--browser_type varchar
+--dates_active array(date)
+--date date
 The dates_active array should be a datelist implementation that tracks how many times a user has been active with a given browser_type.
 
 Note that you can also do this using a MAP(VARCHAR, ARRAY(DATE)) type, but then you have to know how to manipulate the contents of those maps correctly (and then you don't include a browser_type column). If you use the MAP type, you'd have one row per user_id, and the keys of this MAP would be the values for browser_type, and the values would be the arrays of dates for which we saw activity for that user on that browser type.
@@ -25,3 +25,15 @@ The first index of the date list array should correspond to the most recent date
 
 */
 
+CREATE OR REPLACE TABLE harathi.user_devices_cumulated
+(
+	user_id BIGINT,
+	browser_type VARCHAR,
+	dates_active ARRAY(DATE), -- The dates_active array should be a datelist implementation that tracks how many times a user has been active with a given browser_type
+	date DATE
+)
+WITH
+(
+	FORMAT = 'PARQUET',
+	Partitioning = ARRAY['date']
+)

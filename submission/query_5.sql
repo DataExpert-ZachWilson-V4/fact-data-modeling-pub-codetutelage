@@ -9,3 +9,15 @@ host_activity_datelist array(date)
 date date
 
 */
+
+CREATE OR REPLACE TABLE harathi.hosts_cumulated
+(
+  host VARCHAR,
+  host_activity_datelist ARRAY(DATE),
+  date Date
+)
+WITH
+(
+  FORMAT = 'PARQUET',
+  Partitioning = ARRAY['date'] 
+)
