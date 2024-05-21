@@ -36,3 +36,4 @@ WHERE
     CARDINALITY(
         COALESCE(y.metric_array, ARRAY[]) || ARRAY[t.metric_value]
     ) = 1
+    

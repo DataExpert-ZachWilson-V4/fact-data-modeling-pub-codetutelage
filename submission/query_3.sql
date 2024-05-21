@@ -12,7 +12,7 @@ WITH old_data AS (
     FROM harathi.user_devices_cumulated
     WHERE date = DATE('2022-09-29')
 ),
-
+ 
 new_data AS (
     SELECT 
         web.user_id AS user_id,

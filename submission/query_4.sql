@@ -13,6 +13,7 @@ You can write this query in a single step, but note the three main transformatio
 
 */
 
+
 WITH
   today_data AS (
     SELECT *

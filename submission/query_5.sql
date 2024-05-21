@@ -7,7 +7,6 @@ The schema for this table should include:
 host varchar
 host_activity_datelist array(date)
 date date
-
 */
 
 CREATE OR REPLACE TABLE harathi.hosts_cumulated

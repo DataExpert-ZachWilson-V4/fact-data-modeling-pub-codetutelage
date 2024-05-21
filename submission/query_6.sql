@@ -5,7 +5,8 @@ As shown in the fact data modeling day 2 lab, Write a query to incrementally pop
 Note: Remember to leverage a full outer join, and to properly handle imputing empty values in the array for windows where a host gets a visit in the middle of the array time window.
 */
 
-INSERT INTO harathi.host_cumulated
+
+INSERT INTO harathi.hosts_cumulated
 -- Subquery for 'yesterday' data
 WITH yesterday AS (
   SELECT

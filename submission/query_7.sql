@@ -18,3 +18,4 @@ CREATE OR REPLACE TABLE harathi.host_activity_reduced (
     FORMAT = 'PARQUET',
     Partitioning = ARRAY['metric_name','month_start']
   )
+  
