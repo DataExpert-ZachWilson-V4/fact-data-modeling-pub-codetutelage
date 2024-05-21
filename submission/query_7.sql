@@ -8,7 +8,7 @@ metric_array array(integer)
 month_start varchar
 */
 
-CREATE OR REPLACE TABLE harathi.host_activity_reduced(
+CREATE OR REPLACE TABLE harathi.host_activity_reduced (
   host VARCHAR,
   metric_name VARCHAR,
   metric_array ARRAY(INTEGER),
